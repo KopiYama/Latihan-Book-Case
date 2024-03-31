@@ -79,7 +79,7 @@ public class BookMenu {
             try {
                 String input = scanner.nextLine();
                 if (input.trim().isEmpty()) {
-                    System.out.println("\nPilihan tidak valid. Silakan coba lagi.");
+                    System.out.println("\nPilihan tidak valid. Silakan coba lagi.\n");
                     continue;
                 }
                 int choice = Integer.parseInt(input);
@@ -97,10 +97,10 @@ public class BookMenu {
                         System.exit(0);
                         break;
                     default:
-                        System.out.println("\nPilihan tidak valid. Silakan coba lagi.");
+                        System.out.println("\nPilihan tidak valid. Silakan coba lagi.\n");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("\nPilihan tidak valid. Silakan coba lagi.");
+                System.out.println("\nPilihan tidak valid. Silakan coba lagi.\n");
             }
         }
     }
@@ -121,7 +121,7 @@ public class BookMenu {
                 String input = scanner.nextLine();
                 // Handle empty input
                 if (input.trim().isEmpty()) {
-                    System.out.println("\nPilihan tidak valid. Silakan coba lagi.");
+                    System.out.println("\nPilihan tidak valid. Silakan coba lagi.\n");
                     continue; // Skip to the next iteration of the loop
                 }
 
@@ -146,10 +146,10 @@ public class BookMenu {
                         System.exit(0);
                         break;
                     default:
-                        System.out.println("\nPilihan tidak valid. Silakan coba lagi.");
+                        System.out.println("\nPilihan tidak valid. Silakan coba lagi.\n");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("\nPilihan tidak valid. Silakan coba lagi.");
+                System.out.println("\nPilihan tidak valid. Silakan coba lagi.\n");
             }
         }
     }
@@ -168,7 +168,7 @@ public class BookMenu {
             try {
                 String input = scanner.nextLine();
                 if (input.trim().isEmpty()) {
-                    System.out.println("\nPilihan tidak valid. Silakan coba lagi.");
+                    System.out.println("\nPilihan tidak valid. Silakan coba lagi.\n");
                     continue;
                 }
                 int choice = Integer.parseInt(input);
@@ -189,10 +189,10 @@ public class BookMenu {
                         System.exit(0);
                         break;
                     default:
-                        System.out.println("\nPilihan tidak valid. Silakan coba lagi.");
+                        System.out.println("\nPilihan tidak valid. Silakan coba lagi.\n");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("\nPilihan tidak valid. Silakan coba lagi.");
+                System.out.println("\nPilihan tidak valid. Silakan coba lagi.\n");
             }
         }
     }
@@ -211,7 +211,7 @@ public class BookMenu {
             try {
                 String input = scanner.nextLine();
                 if (input.trim().isEmpty()) {
-                    System.out.println("\nPilihan tidak valid. Silakan coba lagi.");
+                    System.out.println("\nPilihan tidak valid. Silakan coba lagi.\n");
                     continue;
                 }
                 int choice = Integer.parseInt(input);
@@ -232,10 +232,10 @@ public class BookMenu {
                         System.exit(0);
                         break;
                     default:
-                        System.out.println("\nPilihan tidak valid. Silakan coba lagi.");
+                        System.out.println("\nPilihan tidak valid. Silakan coba lagi.\n");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("\nPilihan tidak valid. Silakan coba lagi.");
+                System.out.println("\nPilihan tidak valid. Silakan coba lagi.\n");
             }
         }
     }
@@ -254,7 +254,7 @@ public class BookMenu {
             try {
                 String input = scanner.nextLine();
                 if (input.trim().isEmpty()) {
-                    System.out.println("\nPilihan tidak valid. Silakan coba lagi.");
+                    System.out.println("\nPilihan tidak valid. Silakan coba lagi.\n");
                     continue;
                 }
                 int choice = Integer.parseInt(input);
@@ -275,10 +275,10 @@ public class BookMenu {
                         System.exit(0);
                         break;
                     default:
-                        System.out.println("\nPilihan tidak valid. Silakan coba lagi.");
+                        System.out.println("\nPilihan tidak valid. Silakan coba lagi.\n");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("\nPilihan tidak valid. Silakan coba lagi.");
+                System.out.println("\nPilihan tidak valid. Silakan coba lagi.\n");
             }
         }
     }

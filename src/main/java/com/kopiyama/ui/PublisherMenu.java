@@ -63,7 +63,7 @@ public class PublisherMenu {
             try {
                 String input = scanner.nextLine();
                 if (input.trim().isEmpty()) {
-                    System.out.println("\nPilihan tidak valid. Silakan coba lagi.");
+                    System.out.println("\nPilihan tidak valid. Silakan coba lagi.\n");
                     continue;
                 }
                 int choice = Integer.parseInt(input);
@@ -81,10 +81,10 @@ public class PublisherMenu {
                         System.exit(0);
                         break;
                     default:
-                        System.out.println("\nPilihan tidak valid. Silakan coba lagi.");
+                        System.out.println("\nPilihan tidak valid. Silakan coba lagi.\n");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("\nPilihan tidak valid. Silakan coba lagi.");
+                System.out.println("\nPilihan tidak valid. Silakan coba lagi.\n");
             }
         }
     }
