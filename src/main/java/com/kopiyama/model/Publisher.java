@@ -40,9 +40,9 @@ public class Publisher {
 
     @Override
     public String toString() {
-        return "Publisher:" + '\n' +
-                "Publisher Name = " + publisherName + '\n' +
-                "Country        = " + country + '\n' +
-                "ProductionCost = " + productionCost + '\n';
+        return "Publisher : " +
+                "Publisher Name='" + publisherName + '\'' +
+                ", Country = " + country + '\'' +
+                ", ProductionCost = " + productionCost;
     }
 }

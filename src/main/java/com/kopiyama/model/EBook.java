@@ -1,29 +1,38 @@
 package com.kopiyama.model;
 
 public class EBook extends CommercialBook{
-    public EBook() {
+    private Author author;
 
+    @Override
+    public void calculatePrice() {
+        price = publisher.getProductionCost() * 1.2;
     }
 
-    public EBook(String bookCode, String title, Author author, Publisher publisher, double price) {
-        super(bookCode, title, author, publisher, price);
+    public EBook() {
+    }
+
+    public EBook(String bookCode, String title, Author author, Publisher publisher, Double price) {
+        super(bookCode, title, publisher, price);
+        this.author = author;
         calculatePrice();
     }
 
     @Override
-    public void calculatePrice() {
-        double productionCost = getPublisher().getProductionCost();
-        double ebookPrice = productionCost * 1.20; // 120% dari Production Cost
-        this.setPrice(ebookPrice);
+    public Author getAuthor() {
+        return this.author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
     @Override
     public String toString() {
-        return "EBook:" + '\n' +
-                "Book Code  = " + getBookCode() + '\n' +
-                "Title      = " + getTitle() + '\n' +
-                "Author     = " + getAuthor().getFullname() + '\n' +
-                "Publisher  = " + getPublisher().getPublisherName() + '\n' +
-                "Price      = " + getPrice() + '\n';
+        return //"EBookk : " +
+                "Book Code = " + super.bookCode +
+                ", Title = " + super.title +
+//                ", Author = " + getAuthor().getFullName() +
+                ", Publisher = " + super.publisher.getPublisherName() +
+                ", Price = " + super.price;
     }
 }

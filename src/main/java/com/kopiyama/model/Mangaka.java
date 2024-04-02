@@ -1,9 +1,14 @@
 package com.kopiyama.model;
 
-public class Mangaka extends AuthorImpl{
+public class Mangaka extends Author{
     private String rating;
 
-    public Mangaka(){
+    public Mangaka() {
+
+    }
+
+    public Mangaka(String rating){
+        this.rating = rating;
     }
 
     public Mangaka(String firstName, String lastName, String country, int age, String rating) {
@@ -21,10 +26,7 @@ public class Mangaka extends AuthorImpl{
 
     @Override
     public String toString() {
-        return "Mangaka:" + '\n' +
-                "Name    = " + getFullname() + '\n' +
-                "Country = " + getCountry() + '\n' +
-                "Age     = " + getAge() + '\n' +
-                "Rating  = " + rating + '\n';
+        return "Mangaka : " + super.toString() +
+                ", Rating = "+ rating;
     }
 }

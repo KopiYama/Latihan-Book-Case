@@ -1,20 +1,17 @@
 package com.kopiyama.model;
 
-public  abstract class CommercialBook {
-    private String bookCode;
-    private String title;
-    private Author author;
-    private Publisher publisher;
-    private double price;
+public abstract class CommercialBook {
+    protected String bookCode;
+    protected String title;
+    protected Publisher publisher;
+    protected Double price;
 
     public CommercialBook() {
-
     }
 
-    public CommercialBook(String bookCode, String title, Author author, Publisher publisher, double price) {
+    public CommercialBook(String bookCode, String title, Publisher publisher, Double price) {
         this.bookCode = bookCode;
         this.title = title;
-        this.author = author;
         this.publisher = publisher;
         this.price = price;
     }
@@ -35,14 +32,6 @@ public  abstract class CommercialBook {
         this.title = title;
     }
 
-    public Author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author = author;
-    }
-
     public Publisher getPublisher() {
         return publisher;
     }
@@ -51,23 +40,24 @@ public  abstract class CommercialBook {
         this.publisher = publisher;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
+
+    public abstract Author getAuthor();
 
     public abstract void calculatePrice();
 
     @Override
     public String toString() {
-        return "CommercialBook:" + '\n' +
-                "Book Code = " + bookCode + '\n' +
-                "Title = " + title + '\n' +
-                "Author = " + author + '\n' +
-                "Publisher = " + publisher + '\n' +
-                "Price = " + price + '\n';
+        return "Book : " +
+                "Book Code = " + bookCode + '\'' +
+                ", Title = " + title + '\'' +
+                ", Publisher=" + publisher + '\'' +
+                ", Price=" + price;
     }
 }

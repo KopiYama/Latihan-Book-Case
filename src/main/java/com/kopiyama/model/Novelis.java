@@ -1,10 +1,10 @@
 package com.kopiyama.model;
 
-public class Novelis extends AuthorImpl {
+public class Novelis extends Author{
     private boolean serial;
     private String rating;
 
-    public Novelis(){
+    public Novelis() {
 
     }
 
@@ -32,11 +32,8 @@ public class Novelis extends AuthorImpl {
 
     @Override
     public String toString() {
-        return "Novelis:" + '\n' +
-                "Name    = " + getFullname() + '\n' +
-                "Country = " + getCountry() + '\n' +
-                "Age     = " + getAge() + '\n' +
-                "Serial  = " + serial + '\n' +
-                "Rating  = " + rating + '\n';
+        return "Novelis : " + super.toString() + '\'' +
+                "Serial = " + serial + '\'' +
+                "Rating = " + rating + '\'';
     }
 }

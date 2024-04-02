@@ -1,90 +1,73 @@
 package com.kopiyama.model;
 
-public class Comic extends CommercialBook {
-    private boolean volumeSeries;
-    private double Tax;
-    private String rating;
+public class Comic extends CommercialBook{
+    private Mangaka author;
+    private Boolean volumeSeries;
+    private Double tax;
 
     public Comic() {
-
     }
 
-    public Comic(String bookCode, String title, Author author, Publisher publisher, double price, boolean volumeSeries, double tax, String rating) {
-        super(bookCode, title, author, publisher, price);
+    public Comic(String bookCode, String title, Mangaka author, Publisher publisher, Double price, boolean volumeSeries) {
+        super(bookCode, title, publisher, price);
+        this.author = author;
         this.volumeSeries = volumeSeries;
-        Tax = tax;
-        this.rating = rating;
+        this.tax = tax;
         calculatePrice();
         calculateTax();
     }
 
-    public boolean isVolumeSeries() {
-        return volumeSeries;
-    }
-
-    public void setVolumeSeries(boolean volumeSeries) {
-        this.volumeSeries = volumeSeries;
-    }
-
-    public double getTax() {
-        return Tax;
-    }
-
-    public void setTax(double tax) {
-        Tax = tax;
-    }
-
-    public String getRating() {
-        return rating;
-    }
-
-    public void setRating(String rating) {
-        this.rating = rating;
+    @Override
+    public void calculatePrice() {
+        double multiplier = getPublisher().getProductionCost();
+        if (author.getRating().equalsIgnoreCase("New Commer")) {
+            multiplier = volumeSeries ? 1.35 : 1.25;
+        } else if (author.getRating().equalsIgnoreCase("Good")) {
+            multiplier = volumeSeries ? 1.45 : 1.30;
+        } else if (author.getRating().equalsIgnoreCase("Best Seller")) {
+            multiplier = volumeSeries ? 1.50 : 1.40;
+        }
+        this.price = publisher.getProductionCost() * multiplier;
     }
 
     public void calculateTax() {
-        double comicPrice = this.getPrice();
-        double tax = comicPrice * 0.05; // 5% dari Comic Price
-        this.setTax(tax);
+        this.tax = this.price * 0.05;
     }
 
     @Override
-    public void calculatePrice() {
-        double productionCost = this.getPublisher().getProductionCost();
-        double comicPrice = 0;
+    public Mangaka getAuthor() {
+        return this.author;
+    }
 
-        if (rating.equalsIgnoreCase("New Commer")) {
-            if (volumeSeries) {
-                comicPrice = productionCost * 1.35; // 135% dari Production Cost
-            } else {
-                comicPrice = productionCost * 1.25; // 125% dari Production Cost
-            }
-        } else if (rating.equalsIgnoreCase("Good")) {
-            if (volumeSeries) {
-                comicPrice = productionCost * 1.45; // 145% dari Production Cost
-            } else {
-                comicPrice = productionCost * 1.30; // 130% dari Production Cost
-            }
-        } else if (rating.equalsIgnoreCase("Best Seller")) {
-            if (volumeSeries) {
-                comicPrice = productionCost * 1.50; // 150% dari Production Cost
-            } else {
-                comicPrice = productionCost * 1.40; // 140% dari Production Cost
-            }
-        }
-        this.setPrice(comicPrice);
+    public void setAuthor(Mangaka author) {
+        this.author = author;
+    }
+
+    public Boolean getVolumeSeries() {
+        return volumeSeries;
+    }
+
+    public void setVolumeSeries(Boolean volumeSeries) {
+        this.volumeSeries = volumeSeries;
+    }
+
+    public Double getTax() {
+        return tax;
+    }
+
+    public void setTax(Double tax) {
+        this.tax = tax;
     }
 
     @Override
     public String toString() {
-        return "Comic:" + '\n' +
-                "Book Code     = " + getBookCode() + '\n' +
-                "Title         = " + getTitle() + '\n' +
-                "Author        = " + getAuthor().getFullname() + '\n' +
-                "Publisher     = " + getPublisher().getPublisherName() + '\n' +
-                "Price         = " + getPrice() + '\n' +
-                "Volume Series = " + volumeSeries + '\n' +
-                "Tax           = " + Tax + '\n' +
-                "Rating        = " + rating + '\n';
+        return "Comic : " +
+                "Book Code = " + super.bookCode +
+                ", Title = " + super.title +
+                ", Author = " + author.getFullName() +
+                ", Publisher = " + super.publisher.getPublisherName() + '\'' +
+                ", Price = " + super.price + '\'' +
+                ", Volume Series = " + volumeSeries + '\'' +
+                ", Tax = " + tax;
     }
 }
